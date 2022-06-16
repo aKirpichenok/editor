@@ -1,0 +1,30 @@
+.notes {
+    padding: 40px;
+    margin: 2% 3% 0 3%;
+    width: 90%;
+    border-radius: 8px;
+    border: 2px solid teal;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.note {
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgb(207, 151, 10);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        margin: -2px;
+        border-radius: 8px 8px 0 0;
+        background-color: rgb(207, 151, 10);
+    }
+
+    button {
+        order: 999;
+        margin-top: auto;
+    }
+}
