@@ -19,7 +19,7 @@ export const notesSlice = createSlice({
             const {id} = action.payload
             delete state[id as keyof typeof state]
         },
-        editNote: (state) => {
+        editNote: (state,action) => {
 
         },
     },

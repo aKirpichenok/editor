@@ -1,0 +1,27 @@
+button {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+  }
+button:hover {
+    background-color: rgba(207, 151, 10, 1);
+}
+
+textarea {
+    outline:none;
+}
+
+input {
+    outline:none;
+    border:none;
+}
+
+p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h1 {
+    text-overflow: ellipsis;
+}

@@ -1,9 +1,10 @@
+@import './clear_default';
 @import './search'; 
 @import './notes';
+@import './fullscreen_note';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
