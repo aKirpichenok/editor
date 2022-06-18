@@ -1,5 +1,4 @@
-import { useDispatch, useSelector } from "react-redux"
-import { getNotes } from "../../store/reducers/selectors/getNotes"
+import { useDispatch } from "react-redux"
 import { useState } from "react"
 import ViewNote from "../ViewNote/ViewNote"
 import ShowNote from "./ShowNote"
@@ -7,9 +6,7 @@ import EditNote from "../EditNote/EditNote"
 import { showN } from "../../store/reducers/showNote/showNote"
 
 
-
-const Notes = () => {
-    const notes = Object.values(useSelector(getNotes))
+const Notes = ({notes}: any) => {
     const dispatch = useDispatch()
     const [showNote, setshowNote] = useState(false)
     const [editNote,setEditNote] = useState(false)
@@ -27,14 +24,11 @@ const Notes = () => {
         }
     }
 
-    const edit = () => {
-        setEditNote(prev => !prev)
-    }
-
+    // console.log("notes",notes)
     return (
         <div className="notes"> 
             {notes.length > 0 ? notes.map((item: any) => <div key={item.id} className="note">
-                <ShowNote item={item} show={show} edit={edit} />
+                <ShowNote item={item} show={show} />
                 </div>) :
             <h1>Notes are empty</h1>
             }

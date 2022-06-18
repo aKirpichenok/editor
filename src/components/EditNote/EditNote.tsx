@@ -21,8 +21,8 @@ const ViewNote = ({ show }: any) => {
              <div id="view_note">
                  <button className="button" onClick={() => show('edit',{})}><FontAwesomeIcon icon="xmark" /></button>
                  <h1>Title: <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} /></h1>
-                 <p>
-                     <textarea style={{width:'100%', height:'1100%', border:'none'}} 
+                 <p className="textarea">
+                     <textarea 
                      value={description} 
                      onChange={(e) => setDiscription(e.target.value)} />
 
