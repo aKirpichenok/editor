@@ -12,8 +12,13 @@ const SearchInput = () => {
     const [selectTag,setSelectTag]: any = useState({})
 
     const filter = (arr: any) => {
-        if(Object.values(selectTag)?.length < 1) return notes
-        return notes.filter((item: any) => arr.includes(item.tags))   
+        console.log(arr)
+        if(arr.length < 1) return notes
+        return notes.filter((item:any) => item.tags !== '')
+        .filter((item: any) => item.tags.split('#').length < 2 ? 
+                                                    arr.join('').includes(item.tags) 
+                                                    : item.tags.split('#').splice(1)
+                                                                          .find((item: any) => arr.join('').includes(item)))   
     }
 
     const select = (item: any,e: any) => {
