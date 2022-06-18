@@ -1,13 +1,15 @@
 .notes {
-    padding: 40px;
-    margin: 0 0 0 5%;
+    padding: 40px 10px 40px 0;
+    margin: 0 0 0 4%;
     width: 90%;
     border-radius: 8px;
     // border: 2px solid teal;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2%;
+    // justify-content:flex-start;
 }
 
 .note {

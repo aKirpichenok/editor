@@ -73,8 +73,8 @@ h1 {
 }
 
 .notes {
-  padding: 40px;
-  margin: 0 0 0 5%;
+  padding: 40px 10px 40px 0;
+  margin: 0 0 0 4%;
   width: 90%;
   border-radius: 8px;
   display: -webkit-box;
@@ -86,8 +86,10 @@ h1 {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 2%;
 }
 
 .note {

@@ -5,10 +5,10 @@ import Notes from "../Notes/Notes"
 
 const SearchInput = () => {
     const notes = Object.values(useSelector(getNotes))
-    const tags = Object.values(useSelector(getNotes))
+    const tags = Array.from(new Set(Object.values(useSelector(getNotes))
     .filter((item: any) => item.tags !== '')
     .map((item: any) => item.tags)
-    .join('').split('#').map(item => '#'+item).splice(1)
+    .join('').split('#').map(item => '#'+item).splice(1)))
     const [selectTag,setSelectTag]: any = useState({})
 
     const filter = (arr: any) => {

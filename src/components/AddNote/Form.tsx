@@ -10,6 +10,8 @@ const Form = () => {
 
     const addNotes = (e :any) => {
         e.preventDefault()
+        if(description.length < 1) return alert('Descriprion is empty')
+        if(title.length < 1) return alert('Title is empty')
         const tags = description.split(' ').filter(item => item.includes('#') && item[0] === "#").join('')
         dispatch(addNote({id:Math.random(),title,description,tags}))
         setTitle('')
