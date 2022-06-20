@@ -24,7 +24,6 @@ const Notes = ({notes}: any) => {
         }
     }
 
-    // console.log("notes",notes)
     return (
         <div className="notes"> 
             {notes.length > 0 ? notes.map((item: any) => <div key={item.id} className="note">

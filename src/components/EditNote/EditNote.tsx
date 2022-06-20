@@ -17,20 +17,21 @@ const ViewNote = ({ show }: any) => {
     }
 
     return (
+        <div className="block">
         <div className="fullscreen_note">
              <div id="view_note">
                  <button className="button" onClick={() => show('edit',{})}><FontAwesomeIcon icon="xmark" /></button>
                  <h1>Title: <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} /></h1>
-                 <p className="textarea">
+                 <span style ={{paddingTop:'3%',marginLeft:'-85%'}}>DESCRIPTION:</span><p className="textarea">
                      <textarea 
                      value={description} 
                      onChange={(e) => setDiscription(e.target.value)} />
-
+                    
                 </p>
                  <p style={{color:'blue', marginTop:'auto', padding: '1%'}}>{note.tags}</p>
                  <button className="save_edit" onClick={edit}><span>Save</span></button>
-             </div>
-             
+             </div>  
+        </div>
         </div>
     )
 }

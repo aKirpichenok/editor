@@ -6,7 +6,13 @@ const ViewNote = ({ show }: any) => {
 
     const note = useSelector(getShowNote)
 
+
+    const close = (e: any) => {
+        if(e.target.className === 'fullscreen_note' || e.target.className === 'block') show('show',{})
+    }
+
     return (
+        <div className="block" onClick={close}>
         <div className="fullscreen_note">
              <div id="view_note">
                  <button className="button" onClick={() => show('show',{})}><FontAwesomeIcon icon="xmark" /></button>
@@ -17,6 +23,7 @@ const ViewNote = ({ show }: any) => {
                  )}
                  </p>
              </div>
+        </div>
         </div>
     )
 }
