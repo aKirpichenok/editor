@@ -4,7 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from "react"
 import { addNote } from "../../store/reducers/notesReducer/notesReducer"
 
-const ViewNote = ({ show }: any) => {
+
+    type ViewNoteDescription = {
+        show : (a: string, b: any) => void
+    }
+
+const ViewNote = ({ show }: ViewNoteDescription) => {
     const note = useSelector(getShowNote)
     const dispatch = useDispatch()
     const [title,setTitle] = useState(note.title)

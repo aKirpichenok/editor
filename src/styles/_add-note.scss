@@ -1,12 +1,57 @@
 .add-note {
     button {
-        margin: 10% 0 0 96%;
+        position: absolute;
+        top: 85%;
+        left: 96%;
         font-size: 26px;
     }
 
-    div {
-        position: relative;
-        height: 70vh;
-        margin : -40% 0 0 0;
-    }
+   &__form {
+       left: 65%;
+       top: 40%;
+       height: 50%;
+       width: 30%;
+       position: absolute;
+       border: 1px solid black;
+       border-radius: 5px;
+       background-color: #11111120;
+       box-shadow: 0 0 8px #ffffffd9;
+       backdrop-filter: blur(8px);
+       -webkit-backdrop-filter: blur(8px);
+       form {
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       }
+       &__title {
+           width: 50%;
+           height: 50px;
+           margin-bottom: 5%;
+           background-color: inherit;
+           border: 1px solid black;
+           border-radius: 5px;
+           font-size: 24px;
+       }
+
+       &__description {
+        background-color: inherit;
+        height: 250px;
+        width: 100%;
+        font-size: 18px;
+       }
+
+       &__button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        font-size: 18px;
+        border-radius: 5px;
+        background-color: inherit;
+           &:hover{
+            cursor: pointer;
+           }
+       }
+   }
 }

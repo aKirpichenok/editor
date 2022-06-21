@@ -2,7 +2,12 @@ import { useSelector } from "react-redux"
 import { getShowNote } from "../../store/reducers/selectors/getNotes"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const ViewNote = ({ show }: any) => {
+
+    type ViewNoteDescription = {
+        show: (a: string, b: any) => void
+    }
+
+const ViewNote = ({ show }: ViewNoteDescription) => {
 
     const note = useSelector(getShowNote)
 

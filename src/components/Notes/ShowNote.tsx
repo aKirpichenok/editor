@@ -2,7 +2,20 @@ import { deleteNote } from "../../store/reducers/notesReducer/notesReducer"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch } from "react-redux"
 
-const ShowNote = ({ item, show }: any) => {
+type ShowDes = {
+    item: {
+        title: string,
+        description: string,
+        tags: string,
+        id: number
+    },
+    show: (a:string, item: {title: string,
+                            description: string,
+                            tags: string,
+                            id: number}) => void
+}
+
+const ShowNote = ({ item, show }: ShowDes) => {
     const dispatch = useDispatch()
 
     return (

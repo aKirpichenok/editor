@@ -5,6 +5,12 @@ import ShowNote from "./ShowNote"
 import EditNote from "../EditNote/EditNote"
 import { showN } from "../../store/reducers/showNote/showNote"
 
+type itemDescription = {
+    id: number,
+    tags: string,
+    description: string,
+    title: string,
+}
 
 const Notes = ({notes}: any) => {
     const dispatch = useDispatch()
@@ -12,7 +18,7 @@ const Notes = ({notes}: any) => {
     const [editNote,setEditNote] = useState(false)
 
 
-    const show = (type: string,item: any) => {
+    const show = (type: string,item: itemDescription) => {
         dispatch(showN(item))
         switch(type){
             case 'show':

@@ -5,14 +5,13 @@ import Notes from "../Notes/Notes"
 
 const SearchInput = () => {
     const notes = Object.values(useSelector(getNotes))
-    const tags = Array.from(new Set(Object.values(useSelector(getNotes))
+    const tags: string[] = Array.from(new Set(Object.values(useSelector(getNotes))
     .filter((item: any) => item.tags !== '')
     .map((item: any) => item.tags)
     .join('').split('#').map(item => '#'+item).splice(1)))
     const [selectTag,setSelectTag]: any = useState({})
 
-    const filter = (arr: any) => {
-        console.log(arr)
+    const filter = (arr: string[]) => {
         if(arr.length < 1) return notes
         return notes.filter((item:any) => item.tags !== '')
         .filter((item: any) => item.tags.split('#').length < 2 ? 
@@ -21,7 +20,7 @@ const SearchInput = () => {
                                                                           .find((item: any) => arr.join('').includes(item)))   
     }
 
-    const select = (item: any,e: any) => {
+    const select = (item: string,e: any) => {
         selectTag[item] ? setSelectTag((prev: any) => {
             const newArr = {...prev}
             delete newArr[item]
@@ -34,7 +33,12 @@ const SearchInput = () => {
     }
     return (
         <>
-            <div className="tags">{tags.length>0 && tags.map(item =><button onClick={(e) => select(item,e)}>{item}</button>)}</div>
+            <div className="tags">{tags.length>0 && tags.map((item,index) =>
+            <button 
+                key={index} 
+                onClick={(e) => select(item,e)}>{item}
+            </button>)}
+            </div>
             <Notes notes={filter(Object.values(selectTag))}/>
         </>
     )

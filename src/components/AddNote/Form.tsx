@@ -2,7 +2,12 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import {addNote} from "../../store/reducers/notesReducer/notesReducer"
 
-const Form = () => {
+
+type FormDescription = {
+    close: () => void
+}
+
+const Form = ({close}: FormDescription ) => {
     const [title,setTitle] = useState('')
     const [description,setDiscription] = useState('')
 
@@ -16,14 +21,29 @@ const Form = () => {
         dispatch(addNote({id:Math.random(),title,description,tags}))
         setTitle('')
         setDiscription('')
+        close()
     }
 
     return (
-        <div>
+        <div className="add-note__form">
             <form onSubmit={addNotes}>
-                <input type="text" placeholder="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
-                <input type="text" placeholder="text" value={description} onChange={(e) => setDiscription(e.target.value)}/>
-                <input type="submit" value="Add" />
+                <input className="add-note__form__title" 
+                       type="text" 
+                       placeholder="Title" 
+                       value={title} 
+                       onChange={(e) => setTitle(e.target.value)}
+                />
+                <textarea 
+                       className="add-note__form__description" 
+                       placeholder="Description" 
+                       value={description} 
+                       onChange={(e) => setDiscription(e.target.value)}
+                />
+                <input 
+                       type="submit" 
+                       value="Add" 
+                       className="add-note__form__button"
+                />
             </form>
         </div>
     )
