@@ -7,7 +7,6 @@ export const showNoteSlice = createSlice({
     },
     reducers: {
         showN: (state: any,action: {type: string, payload: any}) => {
-            console.log('SHOW',state)
             const {id,title,description,tags} = action.payload
             return {
                 clicked: true,
