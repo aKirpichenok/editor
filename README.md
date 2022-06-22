@@ -6,3 +6,5 @@
 4. Данные хранить в json формате.
 5. Использование CSS препроцессора.
 6. Использование TypeScript
+
+# [Ссылка на netlify](https://regal-malasada-50f943.netlify.app/)
