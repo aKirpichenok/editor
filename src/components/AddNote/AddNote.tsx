@@ -24,7 +24,7 @@ const AddNote = () => {
 
     return (
         <div className="add-note">
-            <button onClick={showForm}><FontAwesomeIcon icon="plus" /></button>
+            <button onClick={showForm}><FontAwesomeIcon icon="plus" />asd</button>
             {form && <Form close={close}/>}
         </div>
     )
